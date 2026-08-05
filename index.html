@@ -3,16 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Glow & Glam - Blog de Maquiagem</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
    <header> 
-     <h1>titulo principal</h1>
-     <p>explicação breve sobre o blog</p>
+     <h1>Glow & Glam</h1>
+     <p>Sua dose diária de beleza, tutoriais de make e dicas imperdíveis de cosméticos.</p>
    </header>
+
    <main>
-     <h2>subtitulo</h2>
-     <p>escrever detalhadamente sobre o assunto</p>
+     <article class="post">
+       <span class="tag">Tutorial de Make</span>
+       
+       <h2>Guia Definitivo: Pele Radiant & Natural para o Dia a Dia</h2>
+       
+       <p class="meta-info">Publicado em 05 de Agosto • Por Marina Silva</p>
+       
+       <p>
+         A maquiagem estilo <em>"no-makeup makeup"</em> veio para ficar! O grande segredo para uma pele radiante e com aspecto natural não está na quantidade de base, mas sim na <strong>preparação prévia da pele (skincare)</strong> e no uso estratégico de iluminadores líquidos.
+       </p>
+       
+       <h3>Passo a passo rápido:</h3>
+       <ol>
+         <li><strong>Hidratação profunda:</strong> Aplique um sérum hidratante leve antes de qualquer produto.</li>
+         <li><strong>Protetor solar com cor:</strong> Substitua bases pesadas por protetores com cor ou BB Creams.</li>
+         <li><strong>Corretivo pontual:</strong> Aplique apenas onde realmente precisa cobrir (olheiras ou espinhas).</li>
+         <li><strong>Toque de cor:</strong> Use blush cremoso nas maçãs do rosto para dar aquele ar saudável.</li>
+       </ol>
+       
+       <div class="interaction-area">
+         <button class="like-btn" id="likeBtn" onclick="toggleLike()">
+           <i class="fa-solid fa-heart"></i>
+           <span id="btnText">Curtir</span>
+         </button>
+         <span class="like-count" id="likeCount">124 curtidas</span>
+       </div>
+     </article>
    </main>
+
+   <script>
+     let curtiu = false;
+     let totalCurtidas = 124;
+
+     function toggleLike() {
+       const btn = document.getElementById('likeBtn');
+       const countSpan = document.getElementById('likeCount');
+       const btnText = document.getElementById('btnText');
+
+       if (!curtiu) {
+         curtiu = true;
+         totalCurtidas++;
+         btn.classList.add('liked');
+         btnText.textContent = 'Curtido!';
+       } else {
+         curtiu = false;
+         totalCurtidas--;
+         btn.classList.remove('liked');
+         btnText.textContent = 'Curtir';
+       }
+
+       countSpan.textContent = totalCurtidas + ' curtidas';
+     }
+   </script>
+
 </body>
 </html>
