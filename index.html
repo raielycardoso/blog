@@ -22,6 +22,10 @@
        
        <p class="meta-info">Publicado em 05 de Agosto • Por Marina Silva</p>
        
+       <div class="post-image-container">
+         <img src="Gemini_Generated_Image_a2og26a2og26a2og.png" alt="Mulher se maquiando em frente ao espelho com produtos de beleza" class="post-image">
+       </div>
+
        <p>
          A maquiagem estilo <em>"no-makeup makeup"</em> veio para ficar! O grande segredo para uma pele radiante e com aspecto natural não está na quantidade de base, mas sim na <strong>preparação prévia da pele (skincare)</strong> e no uso estratégico de iluminadores líquidos.
        </p>
@@ -46,7 +50,6 @@
 
    <script>
      let curtiu = false;
-     // Variável iniciando do zero
      let totalCurtidas = 0;
 
      function toggleLike() {
@@ -66,7 +69,6 @@
          btnText.textContent = 'Curtir';
        }
 
-       // Trata o plural/singular do texto
        const textoCurtida = totalCurtidas === 1 ? ' curtida' : ' curtidas';
        countSpan.textContent = totalCurtidas + textoCurtida;
      }
