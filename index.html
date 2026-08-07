@@ -39,14 +39,15 @@
            <i class="fa-solid fa-heart"></i>
            <span id="btnText">Curtir</span>
          </button>
-         <span class="like-count" id="likeCount">124 curtidas</span>
+         <span class="like-count" id="likeCount">0 curtidas</span>
        </div>
      </article>
    </main>
 
    <script>
      let curtiu = false;
-     let totalCurtidas = 124;
+     // Variável iniciando do zero
+     let totalCurtidas = 0;
 
      function toggleLike() {
        const btn = document.getElementById('likeBtn');
@@ -65,7 +66,9 @@
          btnText.textContent = 'Curtir';
        }
 
-       countSpan.textContent = totalCurtidas + ' curtidas';
+       // Trata o plural/singular do texto
+       const textoCurtida = totalCurtidas === 1 ? ' curtida' : ' curtidas';
+       countSpan.textContent = totalCurtidas + textoCurtida;
      }
    </script>
 
