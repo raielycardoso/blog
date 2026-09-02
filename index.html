@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow & Glam - Beleza e Tendências</title>
+    
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilo CSS Externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+   <header class="header"> 
+     <button class="theme-toggle-btn" onclick="toggleDarkMode()" aria-label="Alternar tema">
+       <i class="fa-solid fa-moon" id="themeIcon"></i> <span id="themeText">Modo Escuro</span>
+     </button>
+     <div class="header-content">
+       <h1 class="logo">Glow & Glam</h1>
+       <p class="subtitle">Sua referência diária sobre estética, autocuidado e beleza consciente.</p>
+     </div>
+   </header>
+
+   <main class="container">
+     <article class="post-card">
+       
+       <div class="post-header">
+         <span class="tag">Dicas de Estilo</span>
+         <h2 class="post-title">Segredos para uma Maquiagem Duradoura e Leve</h2>
+         <p class="meta-info">
+           <span><i class="fa-regular fa-calendar"></i> 02 de Setembro</span>
+           <span>•</span>
+           <span><i class="fa-regular fa-user"></i> Por Camila Alencar</span>
+         </p>
+       </div>
+
+       <div class="post-image-container">
+         <img src="Gemini_Generated_Image_a2og26a2og26a2og.png" alt="Mulher aplicando maquiagem leve em frente ao espelho" class="post-image">
+       </div>
+
+       <div class="post-content">
+         <p class="intro">
+           Conquistar um acabamento impecável na maquiagem requer entender que o cuidado começa muito antes da aplicação da base. A harmonização entre hidratação e produtos leves garante um visual fresco por horas.
+         </p>
+         
+         <div class="steps-box">
+           <h3>Rotina simplificada:</h3>
+           <ol class="steps-list">
+             <li><strong>Preparação da pele:</strong> Limpeza suave seguida de hidratante adequado ao seu tipo de pele.</li>
+             <li><strong>Proteção diária:</strong> Aplicação de protetor solar de rápida absorção.</li>
+             <li><strong>Correção direcionada:</strong> Uso pontual de corretivo para uniformizar o tom de forma sutil.</li>
+             <li><strong>Finalização:</strong> Selagem leve nas zonas de maior oleosidade e um toque de blush natural.</li>
+           </ol>
+         </div>
+
+         <!-- Link direcionando para o site da fonte -->
+         <a href="https://www.vogue.globo.com/beleza" target="_blank" rel="noopener noreferrer" class="source-link">
+           <i class="fa-solid fa-arrow-up-right-from-square"></i> Fonte de pesquisa: Vogue Beleza
+         </a>
+       </div>
+       
+       <div class="interaction-area">
+         <button class="like-btn" id="likeBtn" onclick="toggleLike()" aria-label="Curtir publicação">
+           <i class="fa-solid fa-heart"></i>
+           <span id="btnText">Curtir</span>
+         </button>
+         <span class="like-count" id="likeCount">0 curtidas</span>
+       </div>
+
+     </article>
+   </main>
+
+   <script>
+     // Lógica de Curtidas
+     let curtiu = false;
+     let totalCurtidas = 0;
+
+     function toggleLike() {
+       const btn = document.getElementById('likeBtn');
+       const countSpan = document.getElementById('likeCount');
+       const btnText = document.getElementById('btnText');
+
+       if (!curtiu) {
+         curtiu = true;
+         totalCurtidas++;
+         btn.classList.add('liked');
+         btnText.textContent = 'Curtido!';
+       } else {
+         curtiu = false;
+         totalCurtidas--;
+         btn.classList.remove('liked');
+         btnText.textContent = 'Curtir';
+       }
+
+       const textoCurtida = totalCurtidas === 1 ? ' curtida' : ' curtidas';
+       countSpan.textContent = totalCurtidas + textoCurtida;
+     }
+
+     // Lógica do Modo Escuro
+     function toggleDarkMode() {
+       const body = document.body;
+       const icon = document.getElementById('themeIcon');
+       const text = document.getElementById('themeText');
+
+       body.classList.toggle('dark-mode');
+
+       if (body.classList.contains('dark-mode')) {
+         icon.classList.remove('fa-moon');
+         icon.classList.add('fa-sun');
+         text.textContent = 'Modo Claro';
+       } else {
+         icon.classList.remove('fa-sun');
+         icon.classList.add('fa-moon');
+         text.textContent = 'Modo Escuro';
+       }
+     }
+   </script>
+
+</body>
+</html>
